@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Official portfolio of Rtr. PP. MKR. Hari Prasath — Senior Analyst, District Trainer and Rotaract Leader.">
+<title>Rtr. PP. MKR. Hari Prasath | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07111f;
+  --surface:#101f33;
+  --cyan:#37e1ef;
+  --white:#f5f8ff;
+  --muted:#a6b4c7;
+  --line:#263a50;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif;line-height:1.7}
+h1,h2,h3,.logo{font-family:Outfit,sans-serif;line-height:1.18}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+section{padding:95px 0;scroll-margin-top:75px}
+.accent{color:var(--cyan)}
+.tag{color:var(--cyan);font-size:.8rem;letter-spacing:3px;font-weight:800;text-transform:uppercase}
+h2{font-size:clamp(2rem,5vw,3.3rem);margin:12px 0 28px}
+p{color:var(--muted)}
+nav{position:sticky;top:0;z-index:50;background:#07111fee;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;min-height:75px;gap:15px}
+.logo{font-size:1.5rem;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{font-size:.85rem;color:#c8d4e3}
+.nav-links a:hover{color:var(--cyan)}
+.hero{min-height:85vh;display:flex;align-items:center;background:radial-gradient(ellipse at 85% 35%,#123c53 0%,transparent 52%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:55px}
+.hero h1{font-size:clamp(2.8rem,6vw,5.5rem);margin:15px 0}
+.hero h3{font-size:clamp(1rem,2vw,1.45rem);font-weight:500;color:#dce8f4}
+.hero p{max-width:560px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;border:1px solid var(--cyan);background:var(--cyan);color:#06121e;padding:13px 23px;border-radius:9px;font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-4px)}
+.btn.outline{background:transparent;color:var(--cyan)}
+.photo{min-height:460px;border-radius:24px;border:1px solid #2c6575;background:linear-gradient(145deg,#163c50,#0c182a);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.placeholder{text-align:center;color:#91b5c5;padding:25px}
+.placeholder strong{display:block;font-size:3rem;color:var(--cyan)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:27px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--cyan)}
+.card h3{font-size:1.3rem;margin:12px 0}
+.card p{margin-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
+.stat{border-top:2px solid var(--cyan);padding:20px;background:var(--surface);border-radius:10px}
+.stat strong{display:block;font-size:2rem;font-family:Outfit;color:var(--cyan)}
+.stat span{color:var(--muted);font-size:.85rem}
+.alt{background:#0b192b}
+.timeline{border-left:2px solid var(--cyan);margin-left:12px;padding-left:30px}
+.timeline-item{position:relative;margin-bottom:35px}
+.timeline-item:before{content:"";position:absolute;left:-39px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--cyan)}
+.timeline-item small{color:var(--cyan);font-weight:800}
+.timeline-item h3{margin:7px 0}
+.timeline-item p{margin:5px 0}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery-item{height:250px;border-radius:15px;overflow:hidden;background:#132b40;border:1px solid var(--line);position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover}
+.gallery-item .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.gallery-item:has(img) .placeholder{display:none}
+.contact-box{background:linear-gradient(125deg,#102d42,#101b30);padding:45px;border-radius:20px;border:1px solid #245267}
+.contact-box a:not(.btn){color:var(--cyan);overflow-wrap:anywhere}
+footer{text-align:center;border-top:1px solid var(--line);padding:25px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:800px){
+ .hero-grid{grid-template-columns:1fr}
+ .hero{padding:60px 0}
+ .photo{min-height:360px}
+ .grid,.gallery{grid-template-columns:repeat(2,1fr)}
+ .nav-inner{flex-direction:column;padding:15px 0}
+ .nav-links{justify-content:center;gap:13px}
+ section{padding:65px 0}
+}
+@media(max-width:540px){
+ .grid,.gallery,.stats{grid-template-columns:1fr}
+ .hero h1{font-size:2.65rem}
+ .contact-box{padding:25px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav-inner">
+<a href="#home" class="logo">MKR<span>.</span></a>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#professional">Career</a>
+<a href="#rotaract">Rotaract</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="tag">Welcome to my portfolio</div>
+<h1>Rtr. PP. MKR.<br><span class="accent">Hari Prasath</span></h1>
+<h3>Senior Analyst <span class="accent">|</span> District Trainer <span class="accent">|</span> Rotaract Leader</h3>
+<p>Driven by technology, inspired by leadership and committed to creating meaningful impact through learning, service and collaboration.</p>
+<div class="actions">
+<a class="btn" href="#about">Explore My Journey →</a>
+<a class="btn outline" href="#contact">Connect With Me</a>
+</div>
+</div>
+<div class="photo">
+<!-- Upload hero.jpg to the repository to show your portrait -->
+<img src="hero.jpg" alt="Portrait of Hari Prasath" onerror="this.style.display='none'">
+<div class="placeholder"><strong>MKR.</strong>YOUR PROFESSIONAL PHOTO</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container reveal">
+<div class="tag">Who I Am</div>
+<h2>Beyond the <span class="accent">Resume.</span></h2>
+<p>I am Hari Prasath, a Senior Analyst at Objectways Technology, Coimbatore, with an academic background in Artificial Intelligence and ongoing postgraduate studies in business administration.</p>
+<p>Beyond my professional career, Rotaract has played an important role in developing my passion for leadership, training, facilitation and community service. I believe in continuous learning, empowering people and transforming ideas into action.</p>
+<div class="stats">
+<div class="stat"><strong>4.5+</strong><span>Years in Rotaract, as reported in my profile</span></div>
+<div class="stat"><strong>60+</strong><span>Training programs and projects in my Rotaract profile</span></div>
+<div class="stat"><strong>2024</strong><span>Joined Objectways as Senior Analyst</span></div>
+</div>
+</div>
+</section>
+
+<section id="professional" class="alt">
+<div class="container reveal">
+<div class="tag">Professional Journey</div>
+<h2>Building Through <span class="accent">Technology.</span></h2>
+<div class="grid">
+<div class="card">
+<div class="accent">01 / EXPERIENCE</div>
+<h3>Senior Analyst</h3>
+<p><strong>Objectways Technology</strong><br>Coimbatore | March 2024 – Present</p>
+<p>Data validation, quality assurance, analytics, project coordination and supporting client deliverables.</p>
+</div>
+<div class="card">
+<div class="accent">02 / EDUCATION</div>
+<h3>Artificial Intelligence</h3>
+<p>B.Tech in Artificial Intelligence from Karpagam Academy of Higher Education, completed in 2024.</p>
+</div>
+<div class="card">
+<div class="accent">03 / EDUCATION</div>
+<h3>Business Administration</h3>
+<p>MBA at Bharathidasan University, 2025–2027, as listed in my resume.</p>
+</div>
+</div>
+<h3 style="margin-top:45px">Skills & Capabilities</h3>
+<div class="grid">
+<div class="card">Data Analytics & Excel</div>
+<div class="card">AWS S3 & Quality Assurance</div>
+<div class="card">Team Management</div>
+<div class="card">Problem-Solving</div>
+<div class="card">Critical Thinking</div>
+<div class="card">Communication & Leadership</div>
+</div>
+</div>
+</section>
+
+<section id="rotaract">
+<div class="container reveal">
+<div class="tag">Leadership & Service</div>
+<h2>My <span class="accent">Rotaract Journey.</span></h2>
+<p>From club leadership to district-level responsibilities, my journey has been shaped by opportunities to serve, train and collaborate.</p>
+<div class="timeline">
+<div class="timeline-item">
+<small>2026–2027</small>
+<h3>Group Rotaract Representative — Group 2</h3>
+<p>Rotaract District 3206, as listed in my professional resume.</p>
+</div>
+<div class="timeline-item">
+<small>2025–2026</small>
+<h3>Group Rotaract Representative — Group 1</h3>
+<p>District-level leadership and club coordination.</p>
+</div>
+<div class="timeline-item">
+<small>2024–2026</small>
+<h3>District Trainer</h3>
+<p>Contributing to training, learning and leadership development.</p>
+</div>
+<div class="timeline-item">
+<small>2024–2025</small>
+<h3>District Director — Professional Service</h3>
+<p>District-level professional service initiatives.</p>
+</div>
+<div class="timeline-item">
+<small>2023–2024</small>
+<h3>Club President</h3>
+<p>Rotaract Club of Karpagam Academy of Higher Education. Recognized with a Best President Award, as stated in my Rotaract profile.</p>
+</div>
+<div class="timeline-item">
+<small>2022–2023</small>
+<h3>Charter Club Secretary</h3>
+<p>Rotaract Club of Karpagam Academy of Higher Education.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="container reveal">
+<div class="tag">Recognition & Experience</div>
+<h2>Moments That <span class="accent">Matter.</span></h2>
+<div class="grid">
+<div class="card">
+<h3>🏆 Best President Award</h3>
+<p>Recognition for club leadership and contributions during the presidential tenure.</p>
+</div>
+<div class="card">
+<h3>🎓 District Trainer</h3>
+<p>Training and facilitation contributions within the Rotaract district.</p>
+</div>
+<div class="card">
+<h3>🌏 International Exposure</h3>
+<p>International Youth Exchange experience in Sri Lanka and a student exchange program at Universiti Malaysia Perlis.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container reveal">
+<div class="tag">Captured Moments</div>
+<h2>Life Through <span class="accent">My Lens.</span></h2>
+<div class="gallery">
+<div class="gallery-item"><img src="photo1.jpg" alt="Professional moment" onerror="this.remove()"><div class="placeholder">PHOTO 01</div></div>
+<div class="gallery-item"><img src="photo2.jpg" alt="Training session" onerror="this.remove()"><div class="placeholder">PHOTO 02</div></div>
+<div class="gallery-item"><img src="photo3.jpg" alt="Rotaract leadership" onerror="this.remove()"><div class="placeholder">PHOTO 03</div></div>
+<div class="gallery-item"><img src="photo4.jpg" alt="Speaking event" onerror="this.remove()"><div class="placeholder">PHOTO 04</div></div>
+<div class="gallery-item"><img src="photo5.jpg" alt="Community service" onerror="this.remove()"><div class="placeholder">PHOTO 05</div></div>
+<div class="gallery-item"><img src="photo6.jpg" alt="Personal achievement" onerror="this.remove()"><div class="placeholder">PHOTO 06</div></div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="container reveal">
+<div class="tag">My Documents</div>
+<h2>Explore My <span class="accent">Resumes.</span></h2>
+<div class="grid">
+<div class="card">
+<h3>Professional Resume</h3>
+<p>Career, education, skills and professional experience.</p>
+<a class="btn" href="professional-resume.pdf" target="_blank" rel="noopener">View Resume ↗</a>
+</div>
+<div class="card">
+<h3>Rotaract Resume</h3>
+<p>Leadership roles, training contributions and service journey.</p>
+<a class="btn" href="rotaract-resume.pdf" target="_blank" rel="noopener">View Resume ↗</a>
+</div>
+</div>
+<p>Upload the two PDF files with these exact names to activate the buttons.</p>
+</div>
+</section>
+
+<section id="contact">
+<div class="container reveal">
+<div class="contact-box">
+<div class="tag">Let's Connect</div>
+<h2>Let's Create <span class="accent">Impact Together.</span></h2>
+<p>Open to professional connections, meaningful collaborations and opportunities to learn and lead.</p>
+<p>Email: <a href="mailto:rtr.mkrhari@gmail.com">rtr.mkrhari@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/mkr-hari-4954a8200/" target="_blank" rel="noopener">Visit My Profile ↗</a></p>
+<div class="actions">
+<a class="btn" href="mailto:rtr.mkrhari@gmail.com">Get in Touch →</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+© <span id="year"></span> Rtr. PP. MKR. Hari Prasath. All Rights Reserved.
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const items=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window){
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+   }
+  });
+ },{threshold:0.08});
+ items.forEach(item=>observer.observe(item));
+}else{
+ items.forEach(item=>item.classList.add("visible"));
+}
+</script>
+</body>
+</html>
