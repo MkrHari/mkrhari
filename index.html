@@ -621,6 +621,195 @@ footer{
     }
 }
 
+
+/* =========================
+   DIGITAL CREATOR
+========================= */
+
+.creator-section{
+    position:relative;
+}
+
+.creator-intro{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:35px;
+    align-items:stretch;
+    margin-bottom:35px;
+}
+
+.creator-brand{
+    background:linear-gradient(145deg,#101c31,#09111f);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:28px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.creator-brand::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:#ff1744;
+    opacity:.10;
+    filter:blur(70px);
+    border-radius:50%;
+    top:-90px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.creator-logo{
+    position:relative;
+    width:190px;
+    height:190px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 55px rgba(0,0,0,.45);
+    margin:0 auto 18px;
+}
+
+.creator-brand h3{
+    position:relative;
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.creator-brand p{
+    position:relative;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.creator-content{
+    background:linear-gradient(145deg,var(--card2),var(--card));
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.creator-content .creator-label{
+    color:#ff4967;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.creator-content h3{
+    font-size:34px;
+    margin:10px 0 12px;
+}
+
+.creator-content h3 span{
+    color:var(--cyan);
+}
+
+.creator-content p{
+    color:var(--muted);
+    font-size:17px;
+    max-width:720px;
+}
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.social-card{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,var(--card2),var(--card));
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s ease;
+}
+
+.social-card:hover{
+    transform:translateY(-7px);
+    border-color:var(--cyan);
+    box-shadow:0 18px 45px rgba(0,0,0,.25);
+}
+
+.social-card .social-icon{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:rgba(32,224,255,.08);
+    color:var(--cyan);
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.social-card h4{
+    font-size:22px;
+    margin-bottom:7px;
+}
+
+.social-card p{
+    color:var(--muted);
+    font-size:14px;
+    min-height:45px;
+    margin-bottom:18px;
+}
+
+.social-link{
+    color:var(--cyan);
+    font-size:14px;
+    font-weight:bold;
+}
+
+.creator-note{
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+    margin-top:25px;
+}
+
+@media(max-width:850px){
+    .creator-intro{
+        grid-template-columns:1fr;
+    }
+
+    .creator-brand{
+        max-width:420px;
+        width:100%;
+        margin:auto;
+    }
+
+    .social-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+    .creator-content{
+        padding:25px;
+    }
+
+    .creator-content h3{
+        font-size:28px;
+    }
+
+    .creator-logo{
+        width:160px;
+        height:160px;
+    }
+}
+
 /* GALLERY MORE BUTTON */
 
 .gallery-more{
@@ -643,6 +832,7 @@ footer{
 <a href="#about">About</a>
 <a href="#professional">Professional</a>
 <a href="#rotaract">Rotaract</a>
+<a href="#creator">Digital Creator</a>
 <a href="#education">Education</a>
 <a href="#resume">Resume</a>
 <a href="#contact">Contact</a>
@@ -962,6 +1152,125 @@ and club growth.
 </section>
 
 
+<!-- DIGITAL CREATOR -->
+
+<section id="creator" class="creator-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>04 — Digital Creator</small>
+
+<h2>
+Creating My <span>Digital Space</span>
+</h2>
+
+</div>
+
+
+<div class="creator-intro">
+
+<div class="creator-brand">
+
+<img
+src="mkr-speaks-logo.jpg"
+alt="MKR Speaks"
+class="creator-logo"
+>
+
+<h3>MKR Speaks</h3>
+
+<p>My digital creator brand</p>
+
+</div>
+
+
+<div class="creator-content">
+
+<span class="creator-label">Beyond Professional & Rotaract</span>
+
+<h3>Creating. Sharing. <span>Connecting.</span></h3>
+
+<p>
+Alongside my professional career and Rotaract journey,
+I create and share videos regularly across social media.
+MKR Speaks is my space to express ideas, create content
+and connect with a wider audience.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="social-grid">
+
+<a
+href="https://www.instagram.com/mkrspeaks/"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card"
+>
+
+<div class="social-icon">◎</div>
+
+<h4>Instagram</h4>
+
+<p>Follow MKR Speaks for regular videos and content.</p>
+
+<span class="social-link">Visit Instagram →</span>
+
+</a>
+
+
+<a
+href="https://youtube.com/@mkrspeaks.official"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card"
+>
+
+<div class="social-icon">▶</div>
+
+<h4>YouTube</h4>
+
+<p>Watch my videos and explore the MKR Speaks channel.</p>
+
+<span class="social-link">Visit YouTube →</span>
+
+</a>
+
+
+<a
+href="https://www.facebook.com/profile.php?id=61586115868818"
+target="_blank"
+rel="noopener noreferrer"
+class="social-card"
+>
+
+<div class="social-icon">f</div>
+
+<h4>Facebook</h4>
+
+<p>Connect with MKR Speaks and follow my content updates.</p>
+
+<span class="social-link">Visit Facebook →</span>
+
+</a>
+
+</div>
+
+<p class="creator-note">
+Follow MKR Speaks across platforms and stay connected with my latest content.
+</p>
+
+
+</div>
+
+</section>
+
+
 <!-- EDUCATION -->
 
 <section id="education">
@@ -970,7 +1279,7 @@ and club growth.
 
 <div class="section-title">
 
-<small>04 — Education & Skills</small>
+<small>05 — Education & Skills</small>
 
 <h2>
 Learning & <span>Growth</span>
@@ -1047,7 +1356,7 @@ Skills
 
 <div class="section-title">
 
-<small>05 — Documents</small>
+<small>06 — Documents</small>
 
 <h2>
 My <span>Resumes</span>
@@ -1187,7 +1496,7 @@ View Photos →
 
 <div class="section-title">
 
-<small>06 — Gallery</small>
+<small>07 — Gallery</small>
 
 <h2>
 Moments & <span>Memories</span>
@@ -1301,7 +1610,7 @@ Explore more photos and memories.
 
 <div class="section-title">
 
-<small>07 — Contact</small>
+<small>08 — Contact</small>
 
 <h2>
 Let's <span>Connect</span>
