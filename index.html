@@ -1098,7 +1098,6 @@ View Rotaract Resume →
 
 </div>
 
-</section>
 
 <!-- MEDIA KIT -->
 
@@ -1128,6 +1127,8 @@ View Photos →
 
 </div>
 
+</div>
+
 </section>
 
 <!-- MEDIA KIT POPUP -->
@@ -1150,8 +1151,8 @@ View Photos →
             </div>
 
             <div class="media-photo">
-                <img src="media-2.jpg" alt="Professional Photo 2">
-                <a href="media-2.jpg" download>Download Photo ↓</a>
+                <img src="media-2.png" alt="Professional Photo 2">
+                <a href="media-2.png" download>Download Photo ↓</a>
             </div>
 
             <div class="media-photo">
@@ -1274,6 +1275,28 @@ Professional Excellence • Leadership • Service
 </p>
 
 </footer>
+
+<script>
+
+function openMediaKit() {
+    document.getElementById("mediaModal").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeMediaKit() {
+    document.getElementById("mediaModal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("mediaModal");
+
+    if (event.target === modal) {
+        closeMediaKit();
+    }
+}
+
+</script>
 
 </body>
 </html>
