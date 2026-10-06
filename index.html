@@ -620,6 +620,15 @@ footer{
         height: 350px;
     }
 }
+
+/* GALLERY MORE BUTTON */
+
+.gallery-more{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
 </style>
 </head>
 
@@ -1212,9 +1221,76 @@ alt="Hari Prasath"
 
 </div>
 
+<div class="gallery-more">
+
+<button class="media-btn" onclick="openGallery()">
+View More Photos →
+</button>
+
+</div>
+
 </div>
 
 </section>
+
+
+<!-- GALLERY POPUP -->
+
+<div id="galleryModal" class="media-modal">
+
+<div class="media-modal-content">
+
+<button class="close-media" onclick="closeGallery()">×</button>
+
+<div class="media-header">
+
+<small>GALLERY</small>
+
+<h2>
+More <span>Moments</span>
+</h2>
+
+<p>
+Explore more photos and memories.
+</p>
+
+</div>
+
+<div class="media-grid">
+
+<div class="media-photo">
+<img src="picture4.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture5.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture6.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture7.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture8.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture9.jpg" alt="Hari Prasath">
+</div>
+
+<div class="media-photo">
+<img src="picture10.jpg" alt="Hari Prasath">
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 
 <!-- CONTACT -->
@@ -1288,11 +1364,26 @@ function closeMediaKit() {
     document.body.style.overflow = "auto";
 }
 
-window.onclick = function(event) {
-    const modal = document.getElementById("mediaModal");
+function openGallery() {
+    document.getElementById("galleryModal").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
 
-    if (event.target === modal) {
+function closeGallery() {
+    document.getElementById("galleryModal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+    const mediaModal = document.getElementById("mediaModal");
+    const galleryModal = document.getElementById("galleryModal");
+
+    if (event.target === mediaModal) {
         closeMediaKit();
+    }
+
+    if (event.target === galleryModal) {
+        closeGallery();
     }
 }
 
