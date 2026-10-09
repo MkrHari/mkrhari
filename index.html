@@ -831,6 +831,22 @@ footer{
     margin-top:30px;
 }
 
+
+/* EMAIL CHOOSER POPUP */
+.email-modal{display:none;position:fixed;z-index:10000;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);padding:20px;align-items:center;justify-content:center}
+.email-modal.open{display:flex}
+.email-modal-content{width:min(480px,100%);background:linear-gradient(145deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 25px 70px rgba(0,0,0,.45);position:relative}
+.email-modal-content h3{font-size:26px;margin:0 35px 8px 0}
+.email-subtitle{color:var(--muted);margin-bottom:22px}
+.email-choice{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 0;border-top:1px solid var(--line)}
+.email-choice-label{font-weight:bold;margin-bottom:4px}
+.email-address{color:var(--muted);overflow-wrap:anywhere;font-size:14px}
+.email-copy-btn{border:1px solid var(--cyan);color:var(--cyan);background:transparent;border-radius:8px;padding:10px 14px;cursor:pointer;font-weight:bold;flex-shrink:0}
+.email-copy-btn:hover{background:var(--cyan);color:#04101d}
+.email-close{position:absolute;right:18px;top:14px;background:transparent;border:0;color:white;font-size:30px;cursor:pointer;line-height:1}
+.email-copy-status{min-height:20px;color:var(--cyan);font-size:13px;margin-top:8px}
+@media(max-width:500px){.email-modal-content{padding:24px 18px}.email-choice{align-items:flex-start}.email-copy-btn{padding:9px 11px}}
+
 </style>
 </head>
 
@@ -1083,14 +1099,14 @@ My <span>Rotaract Journey</span>
 
 <div class="timeline-item">
 <small>2023 — 2024</small>
-<h3>District Trainer Designate — First Attempt</h3>
+<h3>District Trainer Aspirant — First Attempt</h3>
 <p>My first attempt was not successful, but it became a valuable learning experience and motivated me to keep growing.</p>
 </div>
 
 <div class="timeline-item">
 <small>2024</small>
 <h3>GEM LOPS Event Chair</h3>
-<p>Served as Event Chair for GEM Learning of Presidents and Secretaries.</p>
+<p>Served as Event Chair for GEM LOPS.</p>
 </div>
 
 <div class="timeline-item">
@@ -1101,7 +1117,7 @@ My <span>Rotaract Journey</span>
 
 <div class="timeline-item">
 <small>2024 — 2025</small>
-<h3>District Trainer Designate — Second Attempt</h3>
+<h3>District Trainer Aspirant — Second Attempt</h3>
 <p>Appeared again as a District Trainer Aspirant, continuing the journey with more experience and determination.</p>
 </div>
 
@@ -1126,7 +1142,7 @@ My <span>Rotaract Journey</span>
 <div class="timeline-item">
 <small>2026</small>
 <h3>PILOT DTWS Event Chair</h3>
-<p>Event Chair for PILOT District Trainers Workshop.</p>
+<p>Served as Event Chair for PILOT DTWS.</p>
 </div>
 
 </div>
@@ -1586,6 +1602,25 @@ Explore more photos and memories.
 </div>
 
 
+
+<!-- EMAIL CHOOSER POPUP -->
+<div id="emailModal" class="email-modal" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+  <div class="email-modal-content">
+    <button type="button" class="email-close" onclick="closeEmailChooser()" aria-label="Close popup">&times;</button>
+    <h3 id="emailModalTitle">Choose an Email</h3>
+    <p class="email-subtitle">Select the address you need and copy it.</p>
+    <div class="email-choice">
+      <div><div class="email-choice-label">Personal</div><div class="email-address">mkrhari@gmail.com</div></div>
+      <button type="button" class="email-copy-btn" onclick="copyEmailAddress('mkrhari@gmail.com')">Copy</button>
+    </div>
+    <div class="email-choice">
+      <div><div class="email-choice-label">Rotaract</div><div class="email-address">rtr.mkrhari@gmail.com</div></div>
+      <button type="button" class="email-copy-btn" onclick="copyEmailAddress('rtr.mkrhari@gmail.com')">Copy</button>
+    </div>
+    <div id="emailCopyStatus" class="email-copy-status" aria-live="polite"></div>
+  </div>
+</div>
+
 <!-- CONTACT -->
 
 <section id="contact">
@@ -1611,7 +1646,7 @@ and collaborations.
 
 <div class="buttons">
 
-<a href="mailto:rtr.mkrhari@gmail.com" class="btn primary">Email Me</a>
+<button type="button" class="btn primary" onclick="openEmailChooser()" style="cursor:pointer;">Email Me</button>
 
 <a
 href="https://share.google/jluEA7eeCl40NA45W"
@@ -1702,6 +1737,42 @@ window.onclick = function(event) {
         closeGallery();
     }
 }
+
+
+function openEmailChooser() {
+  const modal = document.getElementById("emailModal");
+  if (modal) { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
+}
+function closeEmailChooser() {
+  const modal = document.getElementById("emailModal");
+  if (modal) { modal.classList.remove("open"); document.body.style.overflow = "auto"; }
+}
+async function copyEmailAddress(address) {
+  const status = document.getElementById("emailCopyStatus");
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(address);
+    } else {
+      const input = document.createElement("textarea");
+      input.value = address; input.setAttribute("readonly", "");
+      input.style.position = "fixed"; input.style.opacity = "0";
+      document.body.appendChild(input); input.select();
+      const copied = document.execCommand("copy");
+      document.body.removeChild(input);
+      if (!copied) throw new Error("Copy failed");
+    }
+    if (status) status.textContent = "Email address copied!";
+  } catch (error) {
+    if (status) status.textContent = "Copy was blocked. Please select and copy the address manually.";
+  }
+}
+document.addEventListener("click", function(event) {
+  const modal = document.getElementById("emailModal");
+  if (modal && event.target === modal) closeEmailChooser();
+});
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeEmailChooser();
+});
 
 </script>
 
